@@ -63,7 +63,7 @@ To be precise the attack cycles are defined as follows: [[5]](#5)
 1. The miner starts mining a block on top of the official blockchain.
 2. If an honest miner finds a block first then the cycles ends and he starts over.
 3. Otherwise; when he is first to find a block, he keeps mining on top of it and keeping it a secret.
-4. If before he mines a second block the honest network mines one public block, then he publish his block immediately; thus trying to get the maximal proportion 0<\gamma<1 <sup>[2](#myfootnote2)</sup> of honest miners adopting his block.
+4. If before he mines a second block the honest network mines one public block, then he publish his block immediately; thus trying to get the maximal proportion <img src="http://www.sciweavers.org/tex2img.php?eq=0%3C%5Cgamma%3C1&bc=White&fc=Black&im=fig&fs=12&ff=arev&edit=0" align="center" border="0" alt="0<\gamma<1" width="" height="" ></1> <sup>[2](#myfootnote2)</sup> of honest miners adopting his block.
 5. A competition follows, and if the next block is mined on top of the honest block, then the selfish miner losses the rewards of his block and the attack cycle ends.
 6. And if the attacker or his allied honest miners, mine the next block, then they publish it, and the attack cycle ends again.
 
