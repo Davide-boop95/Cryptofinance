@@ -67,14 +67,13 @@ To be precise the attack cycles are defined as follows: [[5]](#5)
 5. A competition follows, and if the next block is mined on top of the honest block, then the selfish miner losses the rewards of his block and the attack cycle ends.
 6. And if the attacker or his allied honest miners, mine the next block, then they publish it, and the attack cycle ends again.
 
-Also we simulated this attack on both Bitcoin and BCash. Following plots show the revenue plot of selfish mining attack based on attacker hash rate.	 
+Also we simulated this attack on both Bitcoin and BCash. Following plots show the revenue and profitibility of selfish mining attack based on attacker hash rate.	 
 
 ![3](https://user-images.githubusercontent.com/72521500/105478939-25975a00-5ca4-11eb-9cb9-ce2c0efcd389.jpeg)
 
 Note that the green line is the theoretical line that represents the minimum hash rate before the attack becomes profitable given the connectivity.
 
-![4](https://user-images.githubusercontent.com/72521500/105478965-30ea8580-5ca4-11eb-8ce1-c286da5d3668.jpeg)
-
+![4](https://user-images.githubusercontent.com/72521500/105515307-d4538e80-5cd4-11eb-9a40-b7952cdbee4a.jpeg)
 
 <a name="myfootnote1">1</a>: The number of attempts made per second by miner to vary the nonce is called hash rate or hash power.
 
