@@ -74,9 +74,9 @@ Note that the green line is the theoretical line that represents the minimum has
 ![4](https://user-images.githubusercontent.com/72521500/105515307-d4538e80-5cd4-11eb-9a40-b7952cdbee4a.jpeg)
 
 ## The simulation
-On each image the graph on the left represents the revenue of the selfish miner computed as the total revenue gained during the whole simulation divided by the total time passed; on the right you can find the first profitability time, which is defined as the first timestamp at which selfish mining becomes more profitable than honest mining given the same hashrate. In the code, each time a block is mined, we compute the revenue up to that point in time and we compare whether it is higher than the honest revenue.
+On each image the graph on the left represents the revenue of the selfish miner computed as the total revenue gained during the whole simulation divided by the total time passed; on the right you can find the first profitability time, which is defined as the first timestamp at which selfish mining becomes more profitable than honest mining given the same hashrate. In the code each time a block is mined we compute the revenue up to that point in time and we check whether it is higher than the honest revenue.
 
-We can see that when the selfish revenue coincides with honest revenue (the blue line crosses the red line on the left image) the time to profitability is enourmous; as hashrate increases time to profitability greatly decreases. For BCash there is also some instability for lower hashrates as sudden changes in the network's difficulty may render, by pure chance, selfish mining more profitable than honest mining, which can be seen as the small spikes for the hashrate lower than 0.3 in the image.
+We can see that when the selfish revenue coincides with honest revenue (the blue line crosses the red line on the left image) the time to profitability is enourmous; as hashrate increases time to profitability greatly decreases. For BCash there is also some instability for lower hashrates as sudden changes in the network's difficulty may render, by pure chance, selfish mining more profitable than honest mining, which can be seen as the small spikes for the hashrate lower than 0.3 in the plot for Selfish Mining on BCash.
 
 
 ## References
