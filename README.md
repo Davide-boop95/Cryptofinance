@@ -45,9 +45,9 @@ As Nakamato says it is the situation where a malicious miner makes a payment, th
 
 Once the first transaction has been validated in a block in the official blockchain and the vendor delivered the goods (the vendor will not deliver unless some confirmations are visible), the only possibility consists in rewriting the blockchain from that block. [[5]](#5) 
 
-If the attacker controls a majority of hash rate <sup>[1](#myfootnote1)</sup>, that is, if his relative hash rate q be greater than 1\2, then he is able to mine faster that the rest of the network so he can rewrite the last end of the block chain as he desires. This is the reason why a decentralized mining is necessary so that no one can control more than half of the mining power. [[5]](#5) 
+If the attacker controls a majority of hash rate <sup>[1](#myfootnote1)</sup>, that is, if his relative hash rate ![](https://latex.codecogs.com/svg.latex?q) be greater than ![](https://latex.codecogs.com/svg.latex?\frac{1}{2}), then he is able to mine faster that the rest of the network so he can rewrite the last end of the block chain as he desires. This is the reason why a decentralized mining is necessary so that no one can control more than half of the mining power. [[5]](#5) 
 
-Now if the attacker hash rate be 0<q<1\2 , even by this hash rate the attacker can attempt a double spend and will succeed with a non zero probability. [[5]](#5) 
+Now if the attacker hash rate be ![](https://latex.codecogs.com/svg.latex?0%3Cq%3C\frac{1}{2}) , even by this hash rate the attacker can attempt a double spend and will succeed with a non zero probability. [[5]](#5) 
 
 We simulated this attack on Bitcoin. The following plot shows the revenue of a double spend attack based on the attacker hash rate.
 
@@ -63,7 +63,7 @@ To be precise the attack cycles are defined as follows: [[5]](#5)
 1. The miner starts mining a block on top of the official blockchain.
 2. If an honest miner finds a block first then the cycles ends and he starts over.
 3. Otherwise; when he is first to find a block, he keeps mining on top of it and keeping it a secret.
-4. If before he mines a second block the honest network mines one public block, then he publish his block immediately; thus trying to get the maximal proportion <img src="http://www.sciweavers.org/tex2img.php?eq=0%3C%5Cgamma%3C1&bc=White&fc=Black&im=fig&fs=12&ff=arev&edit=0" align="center" border="0" alt="0<\gamma<1" width="" height="" ></1> <sup>[2](#myfootnote2)</sup> of honest miners adopting his block.
+4. If before he mines a second block the honest network mines one public block, then he publish his block immediately; thus trying to get the maximal proportion ![](https://latex.codecogs.com/svg.latex?0%3C\gamma%3C1) <sup>[2](#myfootnote2)</sup> of honest miners adopting his block.
 5. A competition follows, and if the next block is mined on top of the honest block, then the selfish miner losses the rewards of his block and the attack cycle ends.
 6. And if the attacker or his allied honest miners, mine the next block, then they publish it, and the attack cycle ends again.
 
@@ -78,7 +78,7 @@ Note that the green line is the theoretical line that represents the minimum has
 
 <a name="myfootnote1">1</a>: The number of attempts made per second by miner to vary the nonce is called hash rate or hash power.
 
-<a name="myfootnote2">2</a>: The efficiency depends on the new parameter <img src="http://www.sciweavers.org/tex2img.php?eq=%5Cgamma&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="\gamma" width="17" height="17" /> which represents attacker's good connectivity to the network
+<a name="myfootnote2">2</a>: The efficiency depends on the new parameter ![](https://latex.codecogs.com/svg.latex?\gamma) which represents attacker's good connectivity to the network
 
 ## References
 <a id="1">[1]</a> 
