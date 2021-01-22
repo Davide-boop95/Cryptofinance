@@ -20,7 +20,7 @@ As we said it earlier, bitcoin blockchain consists of blocks. Each block can con
 ![1](https://user-images.githubusercontent.com/72521500/105473700-adc63100-5c9d-11eb-839f-84c9fe7371f2.JPG)
 
 
-All transactions must be broadcast to the network and to be validated through a process called mining. Mining is a distributed consensus system that is used to validate transactions by including them in the block chain. It enforces a chronological order in the block chain, and allows different nodes to agree on the state of the system. [[2]](#2)
+All transactions must be broadcasted to the network and are to be validated through a process called mining. Mining is a distributed consensus system that is used to validate transactions by including them in the block chain. It enforces a chronological order in the block chain, and allows different nodes to agree on the state of the system. [[2]](#2)
 
 Thus, to ensure transactions, blocks need to be mined. That's achieved resolving a cryptopuzzle with increasing complexity, requiring computer resources as Proof of Work.
 
@@ -41,15 +41,13 @@ Bitcoin miners also earn fees from transactions. Every transaction may include a
 Now that we briefly introduce block chain and how it is a shared public ledger on which the entire Bitcoin network relies. We want to describe the strategies behind double spend attack and selfish mining attack. 
 
 # Double Spend Attack
-As Nakamato says it is the situation where a malicious miner makes a payment, then in the secret tries to validate a second conflicting transaction in a new block, from the same address, but to a new address that he controls, which allows him to recover the funds. [[5]](#5) 
+As Nakamato says it is the situation where a malicious miner makes a payment, then secretly tries to validate a second conflicting transaction in a new block, from the same address, but to a new address that he controls, which allows him to recover the funds. [[5]](#5) 
 
 Once the first transaction has been validated in a block in the official blockchain and the vendor delivered the goods (the vendor will not deliver unless some confirmations are visible), the only possibility consists in rewriting the blockchain from that block. [[5]](#5) 
 
 If the attacker controls a majority of hash rate <sup>[1](#myfootnote1)</sup>, that is, if his relative hash rate ![](https://latex.codecogs.com/svg.latex?q) be greater than ![](https://latex.codecogs.com/svg.latex?\frac{1}{2}), then he is able to mine faster that the rest of the network so he can rewrite the last end of the block chain as he desires. This is the reason why a decentralized mining is necessary so that no one can control more than half of the mining power. [[5]](#5) 
 
 Now if the attacker hash rate be ![](https://latex.codecogs.com/svg.latex?0%3Cq%3C\frac{1}{2}) , even by this hash rate the attacker can attempt a double spend and will succeed with a non zero probability. [[5]](#5) 
-
-We simulated this attack on Bitcoin. The following plot shows the revenue of a double spend attack based on the attacker hash rate.
 
 ![2](https://user-images.githubusercontent.com/72521500/105473781-c7677880-5c9d-11eb-9ae8-d70adf2dde0a.jpeg)
 
@@ -67,7 +65,7 @@ To be precise the attack cycles are defined as follows: [[5]](#5)
 5. A competition follows, and if the next block is mined on top of the honest block, then the selfish miner losses the rewards of his block and the attack cycle ends.
 6. And if the attacker or his allied honest miners, mine the next block, then they publish it, and the attack cycle ends again.
 
-Also we simulated this attack on both Bitcoin and BCash. Following plots show the revenue and profitibility of selfish mining attack based on attacker hash rate.	 
+Also we simulated this attack on both Bitcoin and BCash. Following plots show the revenue and profitability of a selfish mining attack based on attacker hash rate.	 
 
 ![3](https://user-images.githubusercontent.com/72521500/105478939-25975a00-5ca4-11eb-9cb9-ce2c0efcd389.jpeg)
 
@@ -75,9 +73,11 @@ Note that the green line is the theoretical line that represents the minimum has
 
 ![4](https://user-images.githubusercontent.com/72521500/105515307-d4538e80-5cd4-11eb-9a40-b7952cdbee4a.jpeg)
 
-<a name="myfootnote1">1</a>: The number of attempts made per second by miner to vary the nonce is called hash rate or hash power.
+## The simulation
+On each image the graph on the left represents the revenue of the selfish miner computed as the total revenue gained during the whole simulation divided by the total time passed; on the right you can find the first profitability time, which is defined as the first timestamp at which selfish mining becomes more profitable than honest mining given the same hashrate. In the code, each time a block is mined, we compute the revenue up to that point in time and we compare whether it is higher than the honest revenue.
 
-<a name="myfootnote2">2</a>: The efficiency depends on the new parameter ![](https://latex.codecogs.com/svg.latex?\gamma) which represents attacker's good connectivity to the network
+We can see that when the selfish revenue coincides with honest revenue (the blue line crosses the red line on the left image) the time to profitability is enourmous; as hashrate increases time to profitability greatly decreases. For BCash there is also some instability for lower hashrates as sudden changes in the network's difficulty may render, by pure chance, selfish mining more profitable than honest mining, which can be seen as the small spikes for the hashrate lower than 0.3 in the image.
+
 
 ## References
 <a id="1">[1]</a> 
